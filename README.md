@@ -15,4 +15,4 @@ The application has 3 buttons, the first one "call api order" brings an order an
 The second button "call api search order" brings several orders and adds them to the database.
 The third button "list orders" shows a list of orders with their details.
 
-
+* Note: Remember to put the index.php in the main path of the application.
