@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }}{% endblock %}
+
+{% block body %}
+{{ parent() }}
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">ORDER ID</th>
+      <th scope="col">PHONE</th>
+      <th scope="col">SHIPPING STATUS</th>
+      <th scope="col">SHIPPING PAYMENT STATUS</th>
+      <th scope="col">PAYMENT STATUS</th>
+      <th scope="col">SHIPPING PRICE</th>
+      <th scope="col">DETAILS</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for order in orders %}      
+    <tr>
+      <th scope="row">{{ order.id }}</th>
+      <td>{{ order.order_id }}</td>
+      <td>{{ order.phone }}</td>
+      <td>{{ order.shipping_status }}</td>
+      <td>{{ order.shipping_payment_status }}</td>
+      <td>{{ order.payment_status }}</td>
+      <td>{{ order.shipping_price }}</td>
+      <td><a href="{{ path('list_items', {'id': order.id}) }}">[+]</a></span></td>
+    </tr>    
+    {% endfor %}
+  </tbody>
+</table>
+
+
+            
+            
+        
+
+{% endblock %}

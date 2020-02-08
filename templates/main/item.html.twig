@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }}{% endblock %}
+
+{% block body %}
+{{ parent() }}
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">PRICE</th>
+      <th scope="col">COST</th>
+      <th scope="col">TAX PERC</th>
+      <th scope="col">TAX AMT</th>
+      <th scope="col">QUANTITY</th>
+      <th scope="col">TRACKING NUMBER</th>
+      <th scope="col">CANCELED</th>
+      <th scope="col">SHIPPED STATUS SKU</th>
+      <th scope="col">REFERENCE</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in items %}      
+    <tr>
+      <th scope="row">{{ item.id }}</th>
+      <td>{{ item.price }}</td>
+      <td>{{ item.cost }}</td>
+      <td>{{ item.tax_perc }}</td>
+      <td>{{ item.tax_amt }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>{{ item.tracking_number }}</td>
+      <td>{{ item.canceled }}</td>
+      <td>{{ item.shipped_status_sku }}</td>
+      <td>{{ item.reference }}</td>      
+    </tr>    
+    {% endfor %}
+  </tbody>
+</table>
+
+<a class="btn btn-link" href="{{ path('list_orders') }}">Back</a>
+{% endblock %}

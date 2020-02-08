@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }} {% endblock %}
+
+{% block body %}
+    
+{{ parent() }}
+
+<div class="container-fluid">    
+    <div class="alert alert-info" role="alert">
+        {% for data in response %}
+            {{ data }}
+            <br />
+        {% endfor %}
+    </div>
+      
+</div>
+{% endblock %}
