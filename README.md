@@ -4,7 +4,7 @@ Application developed in symfony 5
 
 ## Instructions ⚙️
 
-1. Change the database connection in the .env file
+1. Composer install & Change the database connection in the .env file
 2. Create the database: php bin/console doctrine:database:create
 3. Create the tables in the database: php bin/console doctrine:schema:update --force
 4. starts to use it
